@@ -1,17 +1,26 @@
 import React from 'react';
-import Post from "./Post/Post"
+import Post from "./Post/Post";
+import style from "./MyPosts.module.css";
 
 const MyPosts = () => {
     return (
-        <div>
-            My Posts
+        <div className={style.postsBlock}>
+            <h3>Мои посты</h3>
             <div>
-                New Post
+                Новый пост
             </div>
-            <Post message="Hi, how are you???" likeCounts="25" />
-            <Post message="I'am OK! It's my first post" likeCounts="1" />
-            <Post message="There is no one here" likeCounts="0" />
-            <Post message="Yeah, I'am the first" likeCounts="37" />
+            <div>
+                <textarea></textarea>
+            </div>
+            <div>
+                <button>Добавить новый пост</button>
+            </div>
+            <div className={style.posts}>
+                <Post message="Hi, how are you???" likeCounts="25" />
+                <Post message="I'am OK! It's my first post" likeCounts="1" />
+                <Post message="There is no one here" likeCounts="0" />
+                <Post message="Yeah, I'am the first" likeCounts="37" />
+            </div>
         </div>
     );
 }
