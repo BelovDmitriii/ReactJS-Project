@@ -20,3 +20,10 @@
     font-size: 18px;
     border: 1px solid;
 }
+
+.btn {
+    width: 200px;
+    border-radius: 20px;
+    background-color: gold;
+    border: 1px solid grey;
+}
