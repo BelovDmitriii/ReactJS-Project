@@ -1,5 +1,7 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
+const SEND_MESSAGE = "SEND-MESSAGE";
 
 let store = {
     _state: {
@@ -27,7 +29,8 @@ let store = {
                 {id:3, message: "Всем привет! Какие планы на выходные"},
                 {id:4, message: "Скоро встретимся на даче! Yo!!!"},
                 {id:5, message: "Как я вижу, сегодня похоже все заняты ( . )( . )"}
-            ]
+            ],
+            newMessageText: ""
         }
     },
     _callSubscriber () {
@@ -53,10 +56,20 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_TEXT){
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT){
+            this._state.messagePage.newMessageText = action.body;
+            this._callSubscriber(this._state);
+        } else if (action.type === SEND_MESSAGE) {
+            let body = this._state.messagePage.newMessageText;
+            this._state.messagePage.newMessageText = "";
+            this._state.messagePage.messages.push ({ id: 6, message: body });
+            this._callSubscriber(this._state);
         }
     }
 }
 
+export const sendMessageCreator = () => ({ type: SEND_MESSAGE })
+export const updateNewMessageTextCreator = (body) => ({ type: UPDATE_NEW_MESSAGE_TEXT, body: body})
 export const addPostActionCreator = () => {
     return {
         type: ADD_POST
