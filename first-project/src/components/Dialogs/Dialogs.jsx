@@ -2,8 +2,8 @@ import React from 'react';
 import style from './Dialogs.module.css';
 import DialogsItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import { updateNewMessageTextCreator } from '../../redux/state';
-import { sendMessageCreator } from '../../redux/state';
+import { updateNewMessageTextCreator } from '../../redux/message-reducer';
+import { sendMessageCreator } from '../../redux/message-reducer';
 
 const Dialogs = (props) => {
     let state = props.store.getState().messagePage;
