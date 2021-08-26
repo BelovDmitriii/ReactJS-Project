@@ -7,19 +7,19 @@ const Navbar = () => {
             <nav className={second.nav}>
                 <div>
                     <div className={second.item}>
-                        <NavLink to ="/profile" activeClassName = {second.active}>Profile</NavLink>
+                        <NavLink to ="/profile" activeClassName = {second.active}>Моя страница</NavLink>
                     </div>
                     <div className={second.item}>
-                        <NavLink to ="/dialogs" activeClassName = {second.active}>Messages</NavLink>
+                        <NavLink to ="/dialogs" activeClassName = {second.active}>Сообщения</NavLink>
                     </div>
                     <div className={second.item}>
-                        <NavLink to="/news" activeClassName = {second.active}>News</NavLink>
+                        <NavLink to="/news" activeClassName = {second.active}>Новости</NavLink>
                     </div>
                     <div className={second.item}>
-                        <NavLink to ="/music" activeClassName = {second.active}>Music</NavLink>
+                        <NavLink to ="/music" activeClassName = {second.active}>Музыка</NavLink>
                     </div>
                     <div className={second.item}>
-                        <NavLink to ="/settings" activeClassName = {second.active}>Settings</NavLink>
+                        <NavLink to ="/settings" activeClassName = {second.active}>Настройки</NavLink>
                     </div>
                 </div>
             </nav>
