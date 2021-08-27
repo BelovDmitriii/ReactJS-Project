@@ -13,6 +13,9 @@ const Navbar = () => {
                         <NavLink to ="/dialogs" activeClassName = {second.active}>Сообщения</NavLink>
                     </div>
                     <div className={second.item}>
+                        <NavLink to ="/users" activeClassName = {second.active}>Польватели</NavLink>
+                    </div>
+                    <div className={second.item}>
                         <NavLink to="/news" activeClassName = {second.active}>Новости</NavLink>
                     </div>
                     <div className={second.item}>
