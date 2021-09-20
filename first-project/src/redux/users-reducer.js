@@ -12,7 +12,10 @@ let initialState = {
 //         followed:true, fullName: "Филар", status: "Вечно веселый", location: {city:"Pushkin", country: "Russia"} },
 //     {id: 4, photoUrl:'https://a.d-cd.net/e406914s-960.jpg', 
 //         followed:false, fullName: "Абдул", status: "Хочу найти друзей", location: {city:"Kemer", country: "Turkey"} },
-    ]
+    ],
+    pageSize: 4,
+    totalUsersCount: 20,
+    currentPage: 3
 };
 
 const usersReducer = (state = initialState, action) => {
