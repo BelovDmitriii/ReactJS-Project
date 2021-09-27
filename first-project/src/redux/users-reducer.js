@@ -16,7 +16,7 @@ let initialState = {
 //     {id: 4, photoUrl:'https://a.d-cd.net/e406914s-960.jpg', 
 //         followed:false, fullName: "Абдул", status: "Хочу найти друзей", location: {city:"Kemer", country: "Turkey"} },
     ],
-    pageSize: 7,
+    pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: true
@@ -62,10 +62,10 @@ const usersReducer = (state = initialState, action) => {
 }
 }
 
-export const followAC = (userId) => ({type: FOLLOW, userId});
-export const unfollowAC = (userId) => ({type: UNFOLLOW, userId});
-export const setUsersAC = (users) => ({type: SET_USERS, users});
-export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-export const setTotalUsersCountAC = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount});
-export const setIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching });
+export const follow = (userId) => ({type: FOLLOW, userId});
+export const unfollow = (userId) => ({type: UNFOLLOW, userId});
+export const setUsers = (users) => ({type: SET_USERS, users});
+export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+export const setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount});
+export const setIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching });
 export default usersReducer;
