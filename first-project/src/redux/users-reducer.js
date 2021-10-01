@@ -16,7 +16,7 @@ let initialState = {
 //     {id: 4, photoUrl:'https://a.d-cd.net/e406914s-960.jpg', 
 //         followed:false, fullName: "Абдул", status: "Хочу найти друзей", location: {city:"Kemer", country: "Turkey"} },
     ],
-    pageSize: 5,
+    pageSize: 15,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: true

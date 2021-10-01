@@ -13,9 +13,3 @@
     grid-area: cont;
     background-color: red;
 }
-
-.app-wrapper-content img {
-  width:100%;
-  height:300px;
-  object-fit: cover;
-}

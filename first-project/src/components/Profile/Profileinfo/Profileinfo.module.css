@@ -7,3 +7,9 @@
     height: 300px !important;
     object-fit: cover;
 }
+
+.mainPhoto {
+    width:100%;
+    height:300px;
+    object-fit: cover;
+}
