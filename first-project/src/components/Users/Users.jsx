@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./users.module.css";
 import userPhoto from "../../assets/images/users.png";
 import { NavLink } from "react-router-dom";
+import *as axios from 'axios';
 
 let Users = (props) => {
 
@@ -32,8 +33,32 @@ let Users = (props) => {
                     </div>
                     <div>
                         { u.followed 
-                        ? <button onClick = { () => {props.unfollow(u.id)} } >Отписаться</button> 
-                        : <button onClick = { () => {props.follow(u.id)}} >Подписаться</button> }
+                        ? <button onClick = { () => {
+                            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{ 
+                                withCredentials: true,
+                                headers: {
+                                    'API-KEY': '415510cc-fbfa-4dcf-b76e-6c4db7f8f5dc'
+                                } 
+                            })
+                            .then(response => {
+                                if (response.data.resultCode === 0 ) {
+                                    props.follow(u.id);
+                                }
+                            });
+                            props.unfollow(u.id)} } >Отписаться</button> 
+                        : <button onClick = { () => {
+                            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, { 
+                                withCredentials: true, 
+                                headers: {
+                                    'API-KEY': '415510cc-fbfa-4dcf-b76e-6c4db7f8f5dc'
+                                } 
+                            })
+                            .then(response => {
+                                if (response.data.resultCode === 0 ) {
+                                    props.follow(u.id);
+                                }
+                            });
+                            props.follow(u.id)}} >Подписаться</button> }
                     </div>
                 </span>
                 <span>
